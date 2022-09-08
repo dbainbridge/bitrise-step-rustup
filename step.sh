@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+echo "Started"
 # Load input values that have been passed by Bitrise.
 source "${BITRISE_STEP_SOURCE_DIR}"/inputs.sh
 
@@ -31,7 +32,7 @@ set_default_rustup
 if [ "${RUST_AUTO_UPDATE_TOOLCHAIN}" = true ] && [ "${IS_FIRST_INSTALL}" = false ]; then
     update_rustup
 fi
-
+echo "Test 2"
 # Use envman to add versions as ENV.
 export_rust_envs
 
